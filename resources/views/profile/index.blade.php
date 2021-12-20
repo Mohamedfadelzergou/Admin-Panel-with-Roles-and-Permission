@@ -6,6 +6,7 @@ Profile
 
 @section('content')
 <section class="content">
+    <h1>Profile</h1>
     <div class="">
         <div class="row">
             <div class="col-md-3">

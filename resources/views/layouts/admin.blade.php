@@ -188,7 +188,7 @@
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    {{-- @include('partials.alert') --}}
+                    @include('partials.alert')
                     @yield('content')
                 </div><!-- /.container-fluid -->
             </div>
