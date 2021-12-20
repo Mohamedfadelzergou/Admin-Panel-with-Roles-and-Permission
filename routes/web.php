@@ -26,4 +26,4 @@ Route::post('/profile',[App\Http\Controllers\UserController::class, 'postProfile
 Route::get('/password/change',[App\Http\Controllers\UserController::class, 'getPassword'])->name('userGetPassword');
 Route::post('/password/change',[App\Http\Controllers\UserController::class, 'postPassword'])->name('userPostPassword');
 Route::resource('permission',App\Http\Controllers\PermissionController::class);
-
+Route::resource('role',App\Http\Controllers\RoleController::class);
