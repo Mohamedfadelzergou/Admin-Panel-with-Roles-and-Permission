@@ -9,7 +9,8 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 Vue.component('role',require('./components/role.vue').default);
-//sweetalert
+
+//sweetalert start
 import Swal from 'sweetalert2'
 window.swal = Swal;
 const Toast = Swal.mixin({
@@ -25,6 +26,15 @@ const Toast = Swal.mixin({
 });
 
 window.toast = Toast;
+//sweetalert end
+//vform start
+import { Form } from 'vform'
+import { HasError,AlertError } from 'vform/src/components/bootstrap5'
+window.Form = Form;
+
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+//vform end
 const app = new Vue({
     el: '#app'
 });

@@ -27,3 +27,5 @@ Route::get('/password/change',[App\Http\Controllers\UserController::class, 'getP
 Route::post('/password/change',[App\Http\Controllers\UserController::class, 'postPassword'])->name('userPostPassword');
 Route::resource('permission',App\Http\Controllers\PermissionController::class);
 Route::resource('role',App\Http\Controllers\RoleController::class);
+//axios Routes
+Route::get('/getPermission',[App\Http\Controllers\PermissionController::class,'getAllPermission']);
