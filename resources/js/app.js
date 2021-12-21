@@ -9,7 +9,7 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 Vue.component('role',require('./components/role.vue').default);
-
+Vue.component('user',require('./components/user.vue').default);
 //sweetalert start
 import Swal from 'sweetalert2'
 window.swal = Swal;

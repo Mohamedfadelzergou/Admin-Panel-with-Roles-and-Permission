@@ -36,13 +36,13 @@ export default {
             permissions:[],
             form:new Form({
                 'name':'',
-                'permission':''
+                'permissions':[]
             }),
         }
     },
     methods:{
         getPermission(){
-            axios.get("http://localhost:8000/getPermission")
+            axios.get("/getPermission")
             .then((res)=>{
                 this.permissions=res.data.permissions;
             }).catch((error)=>{
@@ -54,8 +54,20 @@ export default {
             });
         },
         createRole(){
-            this.dis=false;
-            alert('create Role');
+            this.form.post("/postRole").then(()=>{
+                swal.fire({
+                    icon: 'success',
+                    title: 'Role Created',
+                    text: 'Your Role has been created',
+                })
+                window.location = "/role";
+            }).catch(()=>{
+                swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                });
+            });
             this.dis=true;
         }
     },

@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.index');
     }
 
     /**
@@ -107,6 +107,6 @@ class UserController extends Controller
         $user->update([
             'password'=>bcrypt($request->newpassword)
         ]);
-        return redirect()->back()->with('success','Password successefully updated!!');
+        return redirect()->back()->with('success','Profile successefully updated!!');
     }
 }

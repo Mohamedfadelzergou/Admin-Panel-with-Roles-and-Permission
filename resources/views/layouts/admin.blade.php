@@ -94,7 +94,7 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                @can('create role')
+                                {{-- @can('create role') --}}
                                     <li class="nav-item">
                                         <a href="{{ route('role.index') }}" class="nav-link">
                                             <i class="fas fa-bomb nav-icon"></i>
@@ -107,9 +107,9 @@
                                             <p>Permissions</p>
                                         </a>
                                     </li>
-                                @endcan
+                                {{-- @endcan --}}
                                 <li class="nav-item">
-                                    <a {{--href="{{ route('user.index') }}"--}} class="nav-link">
+                                    <a href="{{ route('user.index') }}" class="nav-link">
                                         <i class="fas fa-users-cog nav-icon"></i>
                                         <p>Users</p>
                                     </a>

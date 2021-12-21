@@ -29,3 +29,4 @@ Route::resource('permission',App\Http\Controllers\PermissionController::class);
 Route::resource('role',App\Http\Controllers\RoleController::class);
 //axios Routes
 Route::get('/getPermission',[App\Http\Controllers\PermissionController::class,'getAllPermission']);
+Route::post('/postRole',[App\Http\Controllers\RoleController::class,'store']);

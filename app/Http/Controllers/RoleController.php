@@ -39,13 +39,24 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'=>'required'
+        // $this->validate($request,[
+        //     'name'=>'required'
+        // ]);
+        // $this->role->create([
+        //     'name'=>$request->name
+        // ]);
+        // return redirect()->route('role.index')->with('success','Role successefully created!!');
+        $this->validate($request, [
+            'name' => 'required|string|unique:roles',
+            'permissions' => 'nullable'
         ]);
-        $this->role->create([
+        $role=$this->role->create([
             'name'=>$request->name
         ]);
-        return redirect()->route('role.index')->with('success','Role successefully created!!');
+        if($request->has("permissions")){
+            $role->givePermissionTo($request->permissions);
+        }
+        return response()->json('Role Created',200);
     }
 
     /**
